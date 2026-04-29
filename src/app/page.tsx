@@ -1,6 +1,4 @@
 import React from 'react';
-import {Header} from '@/components/layout/Header';
-import {BottomNav} from '@/components/layout/BottomNav';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -58,12 +56,8 @@ const STAKING_ASSETS = [
 
 export default function StakingPage() {
     return (
-        <div className="min-h-screen bg-[#0A0B10] text-white pb-[80px] font-sans selection:bg-purple-500/30">
-
-            {/* 1. Header 顶部导航 */}
-            <Header />
-
-            <main className="px-[16px]">
+        <>
+            <div>
                 {/* 2. Hero Section 头部宣传区 */}
                 <section className="mt-[20px] relative">
                     <h1 className="text-[32px] font-extrabold leading-tight">
@@ -182,10 +176,9 @@ export default function StakingPage() {
                         <TrendingUp className="w-[120px] h-[120px] text-purple-500/30" />
                     </div>
                 </section>
-            </main>
+            </div>
 
             {/* 6. Bottom Navigation 底部导航 */}
-            <BottomNav />
-        </div>
+        </>
     );
 }

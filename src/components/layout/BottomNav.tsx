@@ -8,10 +8,10 @@ import { cn } from "@/lib/utils";
 
 const tabs = [
     {
-        href: "/home",
+        href: "/",
         label: "质押",
         icon: Lock,
-        activePaths: ["/", "/home"],
+        activePaths: ["/"],
     },
     {
         href: "/portfolio",

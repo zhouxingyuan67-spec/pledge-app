@@ -11,9 +11,6 @@ import {
     ArrowRight,
     FolderOpen
 } from "lucide-react";
-// 引入上一节抽离的组件 (请确保路径正确)
-import { Header } from "@/components/layout/Header";
-import { BottomNav } from "@/components/layout/BottomNav";
 
 // --- 模拟仓位数据 ---
 const POSITIONS = [
@@ -69,11 +66,8 @@ const POSITIONS = [
 
 export default function PortfolioPage() {
     return (
-        <div className="min-h-screen bg-[#0A0B10] text-white pb-[80px] font-sans selection:bg-purple-500/30">
-
-            <Header />
-
-            <main className="px-[16px]">
+        <>
+            <div>
                 {/* 1. Hero Section */}
                 <section className="mt-[20px] flex justify-between items-center relative">
                     <div>
@@ -107,25 +101,20 @@ export default function PortfolioPage() {
                     {/* 分割线 */}
                     <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-[20px] relative z-10" />
 
-                    {/* 底部：收益与数量（次级数据块） */}
-                    <div className="flex justify-between items-start bg-[#151620]/60 rounded-xl p-[14px] border border-white/5 relative z-10">
-                        {/* 左侧次级数据 */}
-                        <div className="w-1/2 border-r border-white/5">
+                    {/* 底部：收益与数量（次级数据） */}
+                    <div className="relative z-10 grid grid-cols-2 gap-[16px]">
+                        <div>
                             <div className="text-[12px] text-gray-400">总收益(USD)</div>
-                            <div className="text-[16px] font-bold mt-[4px]">$ 1,250.34</div>
-                            <div className="text-[12px] font-medium text-emerald-400 mt-[2px] bg-emerald-400/10 inline-block px-[6px] py-[2px] rounded-md">
+                            <div className="mt-[6px] text-[17px] font-bold">$ 1,250.34</div>
+                            <div className="mt-[4px] inline-flex rounded-md bg-emerald-400/10 px-[6px] py-[2px] text-[12px] font-medium text-emerald-400">
                                 +12.50%
                             </div>
                         </div>
 
-                        {/* 右侧次级数据 */}
-                        <div className="w-1/2 pl-[16px]">
+                        <div className="border-l border-white/5 pl-[16px]">
                             <div className="text-[12px] text-gray-400">总质押数量(USD)</div>
-                            <div className="text-[16px] font-bold mt-[4px]">$ 11,310.44</div>
-                            {/* 占位符，为了和左侧的绿色百分比标签对齐保持高度一致 */}
-                            <div className="text-[12px] text-transparent mt-[2px] px-[6px] py-[2px] select-none">
-                                -
-                            </div>
+                            <div className="mt-[6px] text-[17px] font-bold">$ 11,310.44</div>
+                            <div className="mt-[4px] text-[12px] text-gray-500">≈ 3.8529 ETH</div>
                         </div>
                     </div>
 
@@ -233,10 +222,7 @@ export default function PortfolioPage() {
                         <Diamond className="w-full h-full text-purple-400 opacity-80" />
                     </div>
                 </section>
-            </main>
-
-            <BottomNav />
-
-        </div>
+            </div>
+        </>
     );
 }
