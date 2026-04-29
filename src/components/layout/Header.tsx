@@ -12,11 +12,11 @@ export function Header() {
             </div>
             <div className="flex items-center gap-[8px]">
                 {/* 网络切换 */}
-                <div className="flex items-center gap-[4px] bg-[#1A1B23] px-[10px] py-[6px] rounded-full text-[12px] cursor-pointer hover:bg-[#22232e] transition-colors">
-                    <Diamond className="w-[12px] h-[12px] text-[#627EEA]" />
-                    <span>Ethereum</span>
-                    <ChevronDown className="w-[12px] h-[12px] text-gray-400" />
-                </div>
+                {/*<div className="flex items-center gap-[4px] bg-[#1A1B23] px-[10px] py-[6px] rounded-full text-[12px] cursor-pointer hover:bg-[#22232e] transition-colors">*/}
+                {/*    <Diamond className="w-[12px] h-[12px] text-[#627EEA]" />*/}
+                {/*    <span>Ethereum</span>*/}
+                {/*    <ChevronDown className="w-[12px] h-[12px] text-gray-400" />*/}
+                {/*</div>*/}
                 {/* 钱包地址 */}
                 <div className="flex items-center gap-[6px] bg-[#1A1B23] px-[10px] py-[6px] rounded-full text-[12px] cursor-pointer hover:bg-[#22232e] transition-colors">
                     <div className="w-[16px] h-[16px] rounded-full bg-gradient-to-r from-pink-500 to-orange-400" />

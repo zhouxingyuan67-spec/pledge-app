@@ -111,7 +111,7 @@ export default function PortfolioPage() {
                             </div>
                         </div>
 
-                        <div className="border-l border-white/5 pl-[16px]">
+                        <div className="">
                             <div className="text-[12px] text-gray-400">总质押数量(USD)</div>
                             <div className="mt-[6px] text-[17px] font-bold">$ 11,310.44</div>
                             <div className="mt-[4px] text-[12px] text-gray-500">≈ 3.8529 ETH</div>

@@ -5,11 +5,7 @@ import {
     ShieldCheck,
     TrendingUp,
     Share2,
-    Eye,
-    ChevronDown,
-    Lock,
     Wallet,
-    User,
     ArrowRight,
     Diamond
 } from "lucide-react";
@@ -53,7 +49,6 @@ const STAKING_ASSETS = [
         iconBg: 'bg-[#8247E5]',
     }
 ];
-
 export default function StakingPage() {
     return (
         <>
@@ -84,34 +79,46 @@ export default function StakingPage() {
                     </div>
                 </section>
 
-                {/* 3. Dashboard Card 我的质押总览 */}
-                <section className="mt-[30px] bg-gradient-to-br from-[#1C1E2D] to-[#12131D] rounded-2xl p-[20px] border border-white/5 shadow-xl">
-                    <div className="flex items-center gap-[6px] text-gray-300">
-                        <span className="text-[14px] font-medium">我的质押总览</span>
-                        <Eye className="w-[14px] h-[14px]" />
+                {/* 3. Dashboard Card 未连接钱包状态 */}
+                <section className="relative mt-[30px] min-h-[158px] overflow-hidden rounded-2xl border border-white/5 bg-gradient-to-br from-[#1C1E2D] to-[#12131D] p-[18px] shadow-xl">
+                    <div className="relative z-10 max-w-[205px]">
+                        <h2 className="text-[17px] font-extrabold leading-[23px]">连接钱包，开启质押之旅</h2>
+                        <p className="mt-[8px] text-[12px] leading-[18px] text-purple-200/85">
+                            连接钱包后，您可以查看资产、选择质押资产并开始赚取收益
+                        </p>
+
+                        <div className="mt-[14px] grid gap-[7px] text-[11px] leading-[16px] text-[#B9A7FF]">
+                            {["查看实时收益和资产情况", "选择多种主流资产进行质押", "灵活管理质押资产，随时取回"].map((item) => (
+                                <div key={item} className="flex items-center gap-[6px]">
+                                    <span className="grid h-[14px] w-[14px] shrink-0 place-items-center rounded-full border border-purple-400/70 text-[10px] text-purple-300">
+                                        ✓
+                                    </span>
+                                    <span>{item}</span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
-                    <div className="mt-[12px]">
-                        <div className="text-[32px] font-bold font-mono">$ 12,560.78</div>
-                        <div className="text-[12px] text-gray-500 mt-[4px]">≈ 4.2516 ETH</div>
-                    </div>
-
-                    <div className="h-[1px] w-full bg-white/10 my-[16px]" />
-
-                    <div className="flex items-center justify-between">
-                        <div>
-                            <div className="text-[12px] text-gray-400">累计收益</div>
-                            <div className="text-[16px] font-semibold mt-[4px]">$ 1,250.34</div>
-                            <div className="text-[12px] text-emerald-400 mt-[2px]">+12.50%</div>
+                    <div className="pointer-events-none absolute right-[-12px] top-[10px] h-[134px] w-[142px]">
+                        <div className="absolute inset-[12px] rounded-full bg-purple-500/15 blur-2xl" />
+                        <div className="absolute right-[20px] top-[52px] h-[58px] w-[90px] rounded-[18px] border border-purple-300/25 bg-gradient-to-br from-[#7E4DFF] to-[#3B2478] shadow-[0_18px_40px_rgba(126,77,255,0.35)]">
+                            <div className="absolute right-[-8px] top-[24px] h-[20px] w-[25px] rounded-full border border-purple-200/35 bg-[#6E45E8]" />
+                            <div className="absolute left-[12px] top-[13px] h-[6px] w-[45px] rounded-full bg-white/12" />
                         </div>
-                        <div>
-                            <div className="text-[12px] text-gray-400">待领取收益</div>
-                            <div className="text-[16px] font-semibold mt-[4px]">$ 45.68</div>
-                            <div className="text-[12px] text-transparent mt-[2px] select-none">-</div> {/* 占位对齐 */}
+                        <div className="absolute right-[58px] top-[2px] grid h-[42px] w-[42px] place-items-center rounded-full border border-purple-100/30 bg-gradient-to-br from-[#BDA7FF] to-[#6E45E8] shadow-[0_0_24px_rgba(157,112,255,0.5)]">
+                            <Diamond className="h-[20px] w-[20px] text-white" />
                         </div>
-                        <Button className="bg-[#5D3FD3] hover:bg-[#4d32b8] text-white rounded-xl px-[20px] h-[40px]">
-                            领取
-                        </Button>
+                        <div className="absolute right-[18px] top-[18px] grid h-[31px] w-[31px] place-items-center rounded-full border border-purple-100/25 bg-gradient-to-br from-[#A487FF] to-[#6E45E8] text-[13px] font-black text-white">
+                            B
+                        </div>
+                        <div className="absolute right-[8px] bottom-[6px] grid h-[28px] w-[28px] place-items-center rounded-full border border-purple-100/25 bg-gradient-to-br from-[#A487FF] to-[#6E45E8] text-[12px] font-black text-white">
+                            M
+                        </div>
+                        <div className="absolute right-[0px] top-[36px] h-[72px] w-[125px] rounded-[50%] border border-purple-300/45" />
+                        <span className="absolute left-[9px] top-[32px] h-[5px] w-[5px] rounded-full bg-purple-200" />
+                        <span className="absolute right-[33px] top-[0px] h-[5px] w-[5px] rounded-full bg-purple-200" />
+                        <span className="absolute left-[28px] bottom-[24px] h-[4px] w-[4px] rounded-full bg-purple-300" />
+                        <Wallet className="absolute right-[50px] top-[72px] h-[18px] w-[18px] text-purple-100/70" />
                     </div>
                 </section>
 
@@ -177,8 +184,6 @@ export default function StakingPage() {
                     </div>
                 </section>
             </div>
-
-            {/* 6. Bottom Navigation 底部导航 */}
         </>
     );
 }

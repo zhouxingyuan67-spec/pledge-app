@@ -14,12 +14,12 @@ export function AppShell({ children, className, contentClassName }: AppShellProp
   return (
     <div
       className={cn(
-        "h-screen overflow-hidden bg-[#0A0B10] font-sans text-white selection:bg-purple-500/30",
+        "flex h-dvh flex-col overflow-hidden bg-[#0A0B10] font-sans text-white selection:bg-purple-500/30",
         className
       )}
     >
       <Header />
-      <main className={cn("h-[calc(100vh-60px)] overflow-y-auto px-[16px] pb-[96px]", contentClassName)}>
+      <main className={cn("min-h-0 flex-1 overflow-y-auto px-[16px] pb-[96px]", contentClassName)}>
         {children}
       </main>
       <BottomNav />
